@@ -18,10 +18,10 @@ public class MessageController {
     }
 
     private Messages[] getJoke1() {
-        Messages[] messages = new Messages[2];
+        Messages[] messages = new Messages[1];
 
         messages[0] = new Messages("Did you hear about the restaurant on the moon?");
-        messages[1] = new Messages("Great food, no atmosphere.");
+        //messages[1] = new Messages("Great food, no atmosphere.");
 
         return messages;
     }
