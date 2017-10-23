@@ -7,21 +7,24 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MessageController {
 
-    
     @RequestMapping("/message")
-    public Payload greeting(@RequestParam(value="name", defaultValue="World") String name) {
-        
+    public Payload greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
+
         Payload payload = new Payload();
-        Messages m1 = new  Messages("1");
-        Messages m2 = new  Messages("2");
-        
-        Messages[] messages = new Messages[2];
-        messages[0] = m1;
-        messages[1] = m2;
-        
-        payload.setMessages(messages);
-        
-        
+
+        payload.setMessages(getJoke1());
+
         return payload;
     }
+
+    private Messages[] getJoke1() {
+        Messages[] messages = new Messages[2];
+
+        messages[0] = new Messages("Did you hear about the restaurant on the moon?");
+        messages[1] = new Messages("Great food, no atmosphere.");
+
+        return messages;
+    }
+    
+    
 }
